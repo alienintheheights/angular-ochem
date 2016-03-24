@@ -1,0 +1,65 @@
+ <div id="gameButton"> 
+      <button class="btn btn-primary" ng-click="getRandomCard()">Next card</button>
+       <button class="btn btn-warning" ng-click="updateScore(card.id)" ng-disabled="isDisabled(card.id)">
+       Know this one?
+       </button>
+       <br/>
+      <div ng-if="getScore()>0" class="alert alert-success slide" role="alert">
+       <ng-pluralize count="getScore()"
+                when="{'0': '',
+                       'one': 'Good start, you know one reaction!',
+                       '5': 'Five ain\'t shabby, keep going!',
+                       '10': 'Ten! You\'re a brainiac!',
+                       'other': '...and now you know {} reactions!'}">
+        </ng-pluralize>
+      </div>
+</div>
+<div class="flip" ng-if="card"> 
+  <div class="card" ng-class="{flipped:isFlipped}" ng-click="isFlipped=!isFlipped"> 
+  
+    <div id="cardFront" class="face front"> 
+     <div class="cardQuestion">
+       <div class="cardSource" ng-if="card.imageThumbUrl">
+        <img class="cardTease" ng-src="{{card.imageThumbUrl}}" alt="{{card.name}}">
+       </div>
+       <div class="cardSource" ng-if="!card.imageThumbUrl">
+         <img class="cardTease" src="img/cards/1-methylcyclohexene.png" alt="{{card.name}}">
+       </div>
+       <div class="cardReaction">
+         {{card.reactant}}
+         <br/>
+         <img  src="img/cards/right-arrow.png" width="50">
+         <br/>
+         {{card.solvent}}
+       </div>
+       <p class="cardInstructions">click (or tap) to flip card and reveal answer</p>
+     </div>
+   </div> 
+
+
+   <div id="cardBack" class="face back"> 
+    <h3>{{card.name.toUpperCase()}}</h3>
+    
+     <div class="cardInfo">
+      <img class="cardGameImage" ng-src="{{card.imageUrl}}" alt="{{card.name}}">
+      <br/>
+    </div>
+    <div class="cardInfo">
+      <b>Type</b>
+      {{card.type}}
+      <br/>
+      <b>Regioselectivity</b>
+      {{card.regiochemistry}}
+      <br/>
+      <b>Stereoselectivity</b>
+      {{card.stereochemistry}}
+      <span ng-if="card.notes">
+        <br/>
+        <b>Notes</b>
+        {{card.notes}}
+      </span>
+    </div><!-- end cardInfo -->
+  </div> <!-- end cardBack -->
+
+ </div> <!-- end card -->
+</div> <!-- end flip -->

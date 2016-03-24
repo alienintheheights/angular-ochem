@@ -1,0 +1,207 @@
+/* app css stylesheet */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  padding-top: 20px;
+}
+
+.slide.ng-leave {
+  position: relative;
+}
+.slide.ng-enter {
+  position: absolute;
+}
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition: -webkit-transform 0.3s ease-in, opacity 0.3s ease-in;
+     -moz-transition: -moz-transform 0.3s ease-in, opacity 0.3s ease-in;
+       -o-transition: -o-transform 0.3s ease-in, opacity 0.3s ease-in;
+          transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+.slide.ng-enter, .slide.ng-leave.ng-leave-active {
+  -webkit-transform: scaleX(0.0001);
+       -o-transform: scaleX(0.0001);
+          transform: scaleX(0.0001);
+  opacity: 0;
+}
+.slide, .slide.ng-enter.ng-enter-active {
+  -webkit-transform: scaleX(1);
+       -o-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+}
+
+#gameButton {
+  text-align: left;
+  padding: 5px 0 20px 0;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.cardHolder {
+  height: 525px !important;
+  text-align: left;
+}
+.card-list > li > a {
+  padding: 5px 5px;
+}
+.cardTease {
+  width: 125px;
+}
+.cardImage {
+ width: 300px;
+}
+
+.cardListStrike {
+   text-decoration: line-through;
+}
+
+.cardGameImage {
+  width: 450px;
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) { 
+  .cardGameImage {
+    width: 350px !important;
+  }
+  .card {
+    height: 530px !important;
+  }
+  .cardTease {
+    width: 100px;
+  }
+}
+
+.cardInstructions {
+  clear:both;
+  text-align:left;
+  padding-top:20px;
+  font-style: italic;
+}
+
+.cards {
+  list-style: none;
+}
+.cardQuestion {
+  padding-left: 25px;
+  text-align: center;
+}
+.cardInfo {
+  clear: both;
+  text-align: left;
+  width: 100%;
+  padding-top: 25px;
+}
+.cardReaction {
+  float: left;
+  padding-left: 30px;
+}
+.cardSource {
+  float: left;
+}
+
+.card-images {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.thumb {
+  float: left;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  height: 50px;
+  width: 50px;
+}
+
+.cards li {
+  clear: both;
+  height: 220px;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/** Detail View **/
+img.card {
+  float: left;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  background-color: white;
+  padding: 2em;
+  height: 400px;
+  width: 400px;
+  display: none;
+}
+
+img.card:first-child {
+  display: block;
+}
+
+
+ul.card-thumbs {
+  margin: 0;
+  list-style: none;
+}
+
+ul.card-thumbs li {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 1em;
+  background-color: gray;
+}
+
+ul.card-thumbs img {
+  height: 50px;
+  width: 50px;
+  padding: 1em;
+}
+
+ul.card-thumbs img:hover {
+  cursor: pointer;
+}
+
+
+ul.specs {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.specs > li{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+ul.specs > li > span{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+ul.specs dt {
+  font-weight: bold;
+}
+
+h1 {
+  border-bottom: 1px solid gray;
+}
+
+// This applies from 600px and beyond
+@media (min-width: 600px) {
+  body { 
+    background-color: white; 
+  }
+}
+
+

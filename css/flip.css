@@ -1,0 +1,40 @@
+
+.flip {
+  position: relative;
+  padding-top: 2px;
+}
+
+.flip h3 {
+  text-align: left;
+  padding-bottom: 10px;
+}
+.flip p {
+  margin: 0 0 1px;
+  padding-left: 10px;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip .card {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+}
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+  z-index: 2;
+  text-align: center;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.flip .card .front {
+  color: black;
+  cursor: pointer;
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+  cursor: pointer;
+  position: fixed;
+}
+
